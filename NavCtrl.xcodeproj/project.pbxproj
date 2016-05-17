@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390B8A991CEB770B00B06BA7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390B8A981CEB770B00B06BA7 /* WebKit.framework */; };
+		39659DB51CEA3C25003029A2 /* Apple_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 39659DB41CEA3C25003029A2 /* Apple_Logo.png */; };
+		39659DB71CEA3D62003029A2 /* Samsung_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 39659DB61CEA3D62003029A2 /* Samsung_logo.png */; };
+		39659DB91CEA3DFF003029A2 /* Volkswagen_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 39659DB81CEA3DFF003029A2 /* Volkswagen_logo.png */; };
+		39659DBB1CEA3E44003029A2 /* Rolex-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39659DBA1CEA3E44003029A2 /* Rolex-logo.jpg */; };
+		39659DBD1CEA4602003029A2 /* ipad_pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39659DBC1CEA4602003029A2 /* ipad_pic.jpg */; };
+		39659DBF1CEA4640003029A2 /* ipod_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 39659DBE1CEA4640003029A2 /* ipod_pic.png */; };
+		39659DC11CEA4682003029A2 /* iphone_pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39659DC01CEA4682003029A2 /* iphone_pic.jpg */; };
+		39659DC31CEA4CB0003029A2 /* galaxys4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39659DC21CEA4CB0003029A2 /* galaxys4.jpg */; };
+		39659DC51CEA4D87003029A2 /* galaxyNote.png in Resources */ = {isa = PBXBuildFile; fileRef = 39659DC41CEA4D87003029A2 /* galaxyNote.png */; };
+		39659DC71CEA4E3B003029A2 /* galaxyTab.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39659DC61CEA4E3B003029A2 /* galaxyTab.jpg */; };
+		39659DC91CEA4F05003029A2 /* Jetta.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39659DC81CEA4F05003029A2 /* Jetta.jpg */; };
+		39659DCB1CEA4F15003029A2 /* Passat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39659DCA1CEA4F15003029A2 /* Passat.jpg */; };
+		39659DCD1CEA4F23003029A2 /* Golf.png in Resources */ = {isa = PBXBuildFile; fileRef = 39659DCC1CEA4F23003029A2 /* Golf.png */; };
+		39659DCF1CEA5476003029A2 /* presidential.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39659DCE1CEA5476003029A2 /* presidential.jpg */; };
+		39659DD11CEA5486003029A2 /* yacht_master.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39659DD01CEA5486003029A2 /* yacht_master.jpg */; };
+		39659DD31CEA5496003029A2 /* submariner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39659DD21CEA5496003029A2 /* submariner.jpg */; };
+		39659DD71CEA59A3003029A2 /* Webview.m in Sources */ = {isa = PBXBuildFile; fileRef = 39659DD51CEA59A3003029A2 /* Webview.m */; };
+		39659DD81CEA59A3003029A2 /* Webview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39659DD61CEA59A3003029A2 /* Webview.xib */; };
 		48A656B518163BF200746D36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A656B418163BF200746D36 /* Foundation.framework */; };
 		48A656B718163BF200746D36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A656B618163BF200746D36 /* CoreGraphics.framework */; };
 		48A656B918163BF200746D36 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A656B818163BF200746D36 /* UIKit.framework */; };
@@ -36,6 +55,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		390B8A981CEB770B00B06BA7 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		39659DB41CEA3C25003029A2 /* Apple_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple_Logo.png; sourceTree = "<group>"; };
+		39659DB61CEA3D62003029A2 /* Samsung_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Samsung_logo.png; sourceTree = "<group>"; };
+		39659DB81CEA3DFF003029A2 /* Volkswagen_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Volkswagen_logo.png; sourceTree = "<group>"; };
+		39659DBA1CEA3E44003029A2 /* Rolex-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Rolex-logo.jpg"; sourceTree = "<group>"; };
+		39659DBC1CEA4602003029A2 /* ipad_pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ipad_pic.jpg; sourceTree = "<group>"; };
+		39659DBE1CEA4640003029A2 /* ipod_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipod_pic.png; sourceTree = "<group>"; };
+		39659DC01CEA4682003029A2 /* iphone_pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone_pic.jpg; sourceTree = "<group>"; };
+		39659DC21CEA4CB0003029A2 /* galaxys4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = galaxys4.jpg; sourceTree = "<group>"; };
+		39659DC41CEA4D87003029A2 /* galaxyNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = galaxyNote.png; sourceTree = "<group>"; };
+		39659DC61CEA4E3B003029A2 /* galaxyTab.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = galaxyTab.jpg; sourceTree = "<group>"; };
+		39659DC81CEA4F05003029A2 /* Jetta.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Jetta.jpg; sourceTree = "<group>"; };
+		39659DCA1CEA4F15003029A2 /* Passat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Passat.jpg; sourceTree = "<group>"; };
+		39659DCC1CEA4F23003029A2 /* Golf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Golf.png; sourceTree = "<group>"; };
+		39659DCE1CEA5476003029A2 /* presidential.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = presidential.jpg; sourceTree = "<group>"; };
+		39659DD01CEA5486003029A2 /* yacht_master.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yacht_master.jpg; sourceTree = "<group>"; };
+		39659DD21CEA5496003029A2 /* submariner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = submariner.jpg; sourceTree = "<group>"; };
+		39659DD41CEA59A3003029A2 /* Webview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Webview.h; sourceTree = "<group>"; };
+		39659DD51CEA59A3003029A2 /* Webview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Webview.m; sourceTree = "<group>"; };
+		39659DD61CEA59A3003029A2 /* Webview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Webview.xib; sourceTree = "<group>"; };
 		48A656B118163BF200746D36 /* NavCtrl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavCtrl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A656B418163BF200746D36 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		48A656B618163BF200746D36 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				390B8A991CEB770B00B06BA7 /* WebKit.framework in Frameworks */,
 				48A656B718163BF200746D36 /* CoreGraphics.framework in Frameworks */,
 				48A656B918163BF200746D36 /* UIKit.framework in Frameworks */,
 				48A656B518163BF200746D36 /* Foundation.framework in Frameworks */,
@@ -107,6 +147,9 @@
 			children = (
 				48A656E818163F8700746D36 /* ProductViewController.h */,
 				48A656E918163F8700746D36 /* ProductViewController.m */,
+				39659DD41CEA59A3003029A2 /* Webview.h */,
+				39659DD51CEA59A3003029A2 /* Webview.m */,
+				39659DD61CEA59A3003029A2 /* Webview.xib */,
 			);
 			name = ProductViewController;
 			sourceTree = "<group>";
@@ -133,6 +176,7 @@
 		48A656B318163BF200746D36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				390B8A981CEB770B00B06BA7 /* WebKit.framework */,
 				48A656B418163BF200746D36 /* Foundation.framework */,
 				48A656B618163BF200746D36 /* CoreGraphics.framework */,
 				48A656B818163BF200746D36 /* UIKit.framework */,
@@ -157,6 +201,22 @@
 		48A656BB18163BF200746D36 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				39659DB41CEA3C25003029A2 /* Apple_Logo.png */,
+				39659DB61CEA3D62003029A2 /* Samsung_logo.png */,
+				39659DB81CEA3DFF003029A2 /* Volkswagen_logo.png */,
+				39659DBA1CEA3E44003029A2 /* Rolex-logo.jpg */,
+				39659DBC1CEA4602003029A2 /* ipad_pic.jpg */,
+				39659DBE1CEA4640003029A2 /* ipod_pic.png */,
+				39659DC01CEA4682003029A2 /* iphone_pic.jpg */,
+				39659DC21CEA4CB0003029A2 /* galaxys4.jpg */,
+				39659DC41CEA4D87003029A2 /* galaxyNote.png */,
+				39659DC61CEA4E3B003029A2 /* galaxyTab.jpg */,
+				39659DC81CEA4F05003029A2 /* Jetta.jpg */,
+				39659DCA1CEA4F15003029A2 /* Passat.jpg */,
+				39659DCC1CEA4F23003029A2 /* Golf.png */,
+				39659DCE1CEA5476003029A2 /* presidential.jpg */,
+				39659DD01CEA5486003029A2 /* yacht_master.jpg */,
+				39659DD21CEA5496003029A2 /* submariner.jpg */,
 				48A656ED1816468000746D36 /* Sunflower.gif */,
 				48A656BC18163BF200746D36 /* NavCtrl-Info.plist */,
 				48A656BD18163BF200746D36 /* InfoPlist.strings */,
@@ -260,9 +320,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39659DB91CEA3DFF003029A2 /* Volkswagen_logo.png in Resources */,
+				39659DC91CEA4F05003029A2 /* Jetta.jpg in Resources */,
 				48A656EE1816468000746D36 /* Sunflower.gif in Resources */,
+				39659DB71CEA3D62003029A2 /* Samsung_logo.png in Resources */,
 				48A656E718163C1B00746D36 /* CompanyViewController.xib in Resources */,
+				39659DD31CEA5496003029A2 /* submariner.jpg in Resources */,
+				39659DCF1CEA5476003029A2 /* presidential.jpg in Resources */,
+				39659DD81CEA59A3003029A2 /* Webview.xib in Resources */,
+				39659DCB1CEA4F15003029A2 /* Passat.jpg in Resources */,
+				39659DC11CEA4682003029A2 /* iphone_pic.jpg in Resources */,
+				39659DBF1CEA4640003029A2 /* ipod_pic.png in Resources */,
+				39659DBD1CEA4602003029A2 /* ipad_pic.jpg in Resources */,
+				39659DB51CEA3C25003029A2 /* Apple_Logo.png in Resources */,
+				39659DC31CEA4CB0003029A2 /* galaxys4.jpg in Resources */,
+				39659DBB1CEA3E44003029A2 /* Rolex-logo.jpg in Resources */,
 				48A656BF18163BF200746D36 /* InfoPlist.strings in Resources */,
+				39659DCD1CEA4F23003029A2 /* Golf.png in Resources */,
+				39659DC71CEA4E3B003029A2 /* galaxyTab.jpg in Resources */,
+				39659DD11CEA5486003029A2 /* yacht_master.jpg in Resources */,
+				39659DC51CEA4D87003029A2 /* galaxyNote.png in Resources */,
 				48A656C718163BF200746D36 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +361,7 @@
 			files = (
 				48A656E618163C1B00746D36 /* CompanyViewController.m in Sources */,
 				48A656C518163BF200746D36 /* NavControllerAppDelegate.m in Sources */,
+				39659DD71CEA59A3003029A2 /* Webview.m in Sources */,
 				48A656C118163BF200746D36 /* main.m in Sources */,
 				48A656EB18163F8700746D36 /* ProductViewController.m in Sources */,
 			);

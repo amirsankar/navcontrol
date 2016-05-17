@@ -36,8 +36,8 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
-    self.companyList = @[@"Apple mobile devices",@"Samsung mobile devices"];
-    self.title = @"Mobile device makers";
+    self.companyList = [NSMutableArray arrayWithObjects:@"Apple",@"Samsung",@"Volkswagen",@"Rolex", nil];
+    self.title = @"Amir's Companies";
     
     
 }
@@ -75,7 +75,20 @@
     // Configure the cell...
     
     cell.textLabel.text = [self.companyList objectAtIndex:[indexPath row]];
+    NSString *companyName = [self.companyList objectAtIndex:[indexPath row]];
     
+    if ([companyName isEqualToString:@"Samsung"]) {
+        [[cell imageView] setImage: [UIImage imageNamed:@"Samsung_logo.png"]];
+    }
+    if ([companyName isEqualToString:@"Apple"]) {
+        [[cell imageView] setImage: [UIImage imageNamed:@"Apple_Logo.png"]];
+    }
+    if ([companyName isEqualToString:@"Volkswagen"]){
+        [[cell imageView] setImage: [UIImage imageNamed:@"Volkswagen_logo.png"]];;
+    }
+    if ([companyName isEqualToString:@"Rolex"]){
+        [[cell imageView] setImage: [UIImage imageNamed:@"Rolex-logo.jpg"]];;
+    }
     return cell;
 }
 
@@ -125,12 +138,25 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
+    NSString *companyName = [self.companyList objectAtIndex:[indexPath row]];
+    
+    if ([companyName isEqualToString:@"Apple"]) {
+        self.productViewController.title = @"Apple";
+    } else if ([companyName isEqualToString:@"Samsung"]) {
+        self.productViewController.title = @"Samsung";
+    } else if ([companyName isEqualToString:@"Volkswagen"]){
+        self.productViewController.title = @"Volkswagen";
+    } else if ([companyName isEqualToString:@"Rolex"]){
+        self.productViewController.title = @"Rolex";
+    }
 
-    if (indexPath.row == 0){
+    
+    
+    /*if (indexPath.row == 0){
         self.productViewController.title = @"Apple mobile devices";
     } else {
         self.productViewController.title = @"Samsung mobile devices";
-    }
+    }*/
     
     [self.navigationController
         pushViewController:self.productViewController
@@ -138,7 +164,25 @@
     
 
 }
- 
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.companyList removeObjectAtIndex:indexPath.row];
+        [tableView reloadData];
+        
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    [self.companyList insertObject: [self.companyList objectAtIndex:sourceIndexPath.row] atIndex:destinationIndexPath.row];
+    [self.companyList removeObjectAtIndex:(sourceIndexPath.row + 1)];
+}
 
 
 @end
