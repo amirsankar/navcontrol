@@ -17,10 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   /* NSURL *url = [NSURL URLWithString:self.myProductsURL];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    [self.theWebView loadRequest:urlRequest];*/
-    
     NSURL *nsurl=[[NSURL alloc ]initWithString:self.myProductsURL];
     self.theWebView = [[WKWebView alloc]initWithFrame:self.view.frame];
     [self.theWebView loadRequest:[NSURLRequest requestWithURL:nsurl]];
