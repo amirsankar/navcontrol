@@ -10,8 +10,7 @@
 #import <WebKit/WebKit.h>
 
 @interface Webview : UIViewController
-
-@property (retain, nonatomic) WKWebView *theWebView;
-@property (nonatomic) NSString *myProductsURL;
+@property (nonatomic, retain) WKWebView *theWebView;
+@property (nonatomic, retain) NSString *myProductsURL;
 
 @end

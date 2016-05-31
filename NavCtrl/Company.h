@@ -13,7 +13,6 @@
 @property (nonatomic, retain) NSMutableArray *productsArray;
 @property (nonatomic, retain) NSString *companyName;
 @property(nonatomic, retain) NSString *companyImage;
-
 -(instancetype)initName:(NSString *)names andImage:(NSString *)image andProducts:(NSMutableArray *)products;
 
 

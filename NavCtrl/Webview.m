@@ -14,32 +14,31 @@
 
 @implementation Webview
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-    NSURL *nsurl=[[NSURL alloc ]initWithString:self.myProductsURL];
+    NSString *urlString = self.myProductsURL;
+    NSURL *myURL;
+    if ([urlString.lowercaseString hasPrefix:@"http://"]) {
+        myURL = [NSURL URLWithString:urlString];
+    } else {
+        myURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@", urlString]];
+    }
+    
     self.theWebView = [[WKWebView alloc]initWithFrame:self.view.frame];
-    [self.theWebView loadRequest:[NSURLRequest requestWithURL:nsurl]];
+    [self.theWebView loadRequest:[NSURLRequest requestWithURL:myURL]];
     [self.view addSubview:self.theWebView];
-
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (void)dealloc {
+- (void)dealloc
+{
     [_theWebView release];
     [super dealloc];
 }

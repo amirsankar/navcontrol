@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DAO.h"
 
 @class ProductViewController;
 
 @interface CompanyViewController : UITableViewController
-
-@property (nonatomic, retain) NSMutableArray *companyList;
-
 @property (nonatomic, retain) IBOutlet  ProductViewController * productViewController;
+@property (nonatomic, retain) DAO *sharedManager;
 
 @end

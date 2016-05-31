@@ -10,6 +10,7 @@
 		390B8A991CEB770B00B06BA7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390B8A981CEB770B00B06BA7 /* WebKit.framework */; };
 		390B8A9C1CEBBBE100B06BA7 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 390B8A9B1CEBBBE100B06BA7 /* Company.m */; };
 		390B8A9F1CEBBBF500B06BA7 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 390B8A9E1CEBBBF500B06BA7 /* Product.m */; };
+		3926C9351CF4DB3B00AD6219 /* flatiron.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3926C9341CF4DB3B00AD6219 /* flatiron.jpg */; };
 		392789091CECEA3700110A2E /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 392789081CECEA3700110A2E /* DAO.m */; };
 		39659DB51CEA3C25003029A2 /* Apple_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 39659DB41CEA3C25003029A2 /* Apple_Logo.png */; };
 		39659DB71CEA3D62003029A2 /* Samsung_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 39659DB61CEA3D62003029A2 /* Samsung_logo.png */; };
@@ -29,6 +30,11 @@
 		39659DD31CEA5496003029A2 /* submariner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39659DD21CEA5496003029A2 /* submariner.jpg */; };
 		39659DD71CEA59A3003029A2 /* Webview.m in Sources */ = {isa = PBXBuildFile; fileRef = 39659DD51CEA59A3003029A2 /* Webview.m */; };
 		39659DD81CEA59A3003029A2 /* Webview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39659DD61CEA59A3003029A2 /* Webview.xib */; };
+		3996BEDC1CEE4D14007ACDA9 /* AddNewCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = 3996BEDA1CEE4D14007ACDA9 /* AddNewCompany.m */; };
+		3996BEDD1CEE4D14007ACDA9 /* AddNewCompany.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3996BEDB1CEE4D14007ACDA9 /* AddNewCompany.xib */; };
+		39ABA31B1CF38890002E7FA0 /* tttt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39ABA31A1CF38890002E7FA0 /* tttt.jpg */; };
+		39ABA31F1CF38F36002E7FA0 /* AddNewProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABA31D1CF38F36002E7FA0 /* AddNewProduct.m */; };
+		39ABA3201CF38F36002E7FA0 /* AddNewProduct.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39ABA31E1CF38F36002E7FA0 /* AddNewProduct.xib */; };
 		48A656B518163BF200746D36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A656B418163BF200746D36 /* Foundation.framework */; };
 		48A656B718163BF200746D36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A656B618163BF200746D36 /* CoreGraphics.framework */; };
 		48A656B918163BF200746D36 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A656B818163BF200746D36 /* UIKit.framework */; };
@@ -63,6 +69,7 @@
 		390B8A9B1CEBBBE100B06BA7 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		390B8A9D1CEBBBF500B06BA7 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		390B8A9E1CEBBBF500B06BA7 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		3926C9341CF4DB3B00AD6219 /* flatiron.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = flatiron.jpg; path = ../../../../Documents/flatiron.jpg; sourceTree = "<group>"; };
 		392789071CECEA3700110A2E /* DAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAO.h; sourceTree = "<group>"; };
 		392789081CECEA3700110A2E /* DAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAO.m; sourceTree = "<group>"; };
 		39659DB41CEA3C25003029A2 /* Apple_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple_Logo.png; sourceTree = "<group>"; };
@@ -84,6 +91,13 @@
 		39659DD41CEA59A3003029A2 /* Webview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Webview.h; sourceTree = "<group>"; };
 		39659DD51CEA59A3003029A2 /* Webview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Webview.m; sourceTree = "<group>"; };
 		39659DD61CEA59A3003029A2 /* Webview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Webview.xib; sourceTree = "<group>"; };
+		3996BED91CEE4D14007ACDA9 /* AddNewCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewCompany.h; sourceTree = "<group>"; };
+		3996BEDA1CEE4D14007ACDA9 /* AddNewCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewCompany.m; sourceTree = "<group>"; };
+		3996BEDB1CEE4D14007ACDA9 /* AddNewCompany.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewCompany.xib; sourceTree = "<group>"; };
+		39ABA31A1CF38890002E7FA0 /* tttt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tttt.jpg; path = ../../../../Documents/tttt.jpg; sourceTree = "<group>"; };
+		39ABA31C1CF38F36002E7FA0 /* AddNewProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewProduct.h; sourceTree = "<group>"; };
+		39ABA31D1CF38F36002E7FA0 /* AddNewProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewProduct.m; sourceTree = "<group>"; };
+		39ABA31E1CF38F36002E7FA0 /* AddNewProduct.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewProduct.xib; sourceTree = "<group>"; };
 		48A656B118163BF200746D36 /* NavCtrl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavCtrl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A656B418163BF200746D36 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		48A656B618163BF200746D36 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -147,6 +161,7 @@
 			children = (
 				48A656E318163C1B00746D36 /* CompanyViewController.h */,
 				48A656E418163C1B00746D36 /* CompanyViewController.m */,
+				48A656E518163C1B00746D36 /* CompanyViewController.xib */,
 				390B8A9A1CEBBBE100B06BA7 /* Company.h */,
 				390B8A9B1CEBBBE100B06BA7 /* Company.m */,
 			);
@@ -165,6 +180,12 @@
 				39659DD41CEA59A3003029A2 /* Webview.h */,
 				39659DD51CEA59A3003029A2 /* Webview.m */,
 				39659DD61CEA59A3003029A2 /* Webview.xib */,
+				3996BED91CEE4D14007ACDA9 /* AddNewCompany.h */,
+				3996BEDA1CEE4D14007ACDA9 /* AddNewCompany.m */,
+				3996BEDB1CEE4D14007ACDA9 /* AddNewCompany.xib */,
+				39ABA31C1CF38F36002E7FA0 /* AddNewProduct.h */,
+				39ABA31D1CF38F36002E7FA0 /* AddNewProduct.m */,
+				39ABA31E1CF38F36002E7FA0 /* AddNewProduct.xib */,
 			);
 			name = ProductViewController;
 			sourceTree = "<group>";
@@ -207,7 +228,6 @@
 				483796CC1BCBF7C70062D5AB /* ParentViewController */,
 				483796CD1BCBF7EB0062D5AB /* ProductViewController */,
 				48A656C618163BF200746D36 /* Images.xcassets */,
-				48A656E518163C1B00746D36 /* CompanyViewController.xib */,
 				48A656BB18163BF200746D36 /* Supporting Files */,
 			);
 			path = NavCtrl;
@@ -233,6 +253,8 @@
 				39659DD01CEA5486003029A2 /* yacht_master.jpg */,
 				39659DD21CEA5496003029A2 /* submariner.jpg */,
 				48A656ED1816468000746D36 /* Sunflower.gif */,
+				39ABA31A1CF38890002E7FA0 /* tttt.jpg */,
+				3926C9341CF4DB3B00AD6219 /* flatiron.jpg */,
 				48A656BC18163BF200746D36 /* NavCtrl-Info.plist */,
 				48A656BD18163BF200746D36 /* InfoPlist.strings */,
 				48A656C018163BF200746D36 /* main.m */,
@@ -338,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3996BEDD1CEE4D14007ACDA9 /* AddNewCompany.xib in Resources */,
 				39659DB91CEA3DFF003029A2 /* Volkswagen_logo.png in Resources */,
 				39659DC91CEA4F05003029A2 /* Jetta.jpg in Resources */,
 				48A656EE1816468000746D36 /* Sunflower.gif in Resources */,
@@ -347,6 +370,7 @@
 				39659DCF1CEA5476003029A2 /* presidential.jpg in Resources */,
 				39659DD81CEA59A3003029A2 /* Webview.xib in Resources */,
 				39659DCB1CEA4F15003029A2 /* Passat.jpg in Resources */,
+				3926C9351CF4DB3B00AD6219 /* flatiron.jpg in Resources */,
 				39659DC11CEA4682003029A2 /* iphone_pic.jpg in Resources */,
 				39659DBF1CEA4640003029A2 /* ipod_pic.png in Resources */,
 				39659DBD1CEA4602003029A2 /* ipad_pic.jpg in Resources */,
@@ -358,6 +382,8 @@
 				39659DC71CEA4E3B003029A2 /* galaxyTab.jpg in Resources */,
 				39659DD11CEA5486003029A2 /* yacht_master.jpg in Resources */,
 				39659DC51CEA4D87003029A2 /* galaxyNote.png in Resources */,
+				39ABA31B1CF38890002E7FA0 /* tttt.jpg in Resources */,
+				39ABA3201CF38F36002E7FA0 /* AddNewProduct.xib in Resources */,
 				48A656C718163BF200746D36 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,9 +405,11 @@
 			files = (
 				390B8A9F1CEBBBF500B06BA7 /* Product.m in Sources */,
 				48A656E618163C1B00746D36 /* CompanyViewController.m in Sources */,
+				39ABA31F1CF38F36002E7FA0 /* AddNewProduct.m in Sources */,
 				390B8A9C1CEBBBE100B06BA7 /* Company.m in Sources */,
 				48A656C518163BF200746D36 /* NavControllerAppDelegate.m in Sources */,
 				392789091CECEA3700110A2E /* DAO.m in Sources */,
+				3996BEDC1CEE4D14007ACDA9 /* AddNewCompany.m in Sources */,
 				39659DD71CEA59A3003029A2 /* Webview.m in Sources */,
 				48A656C118163BF200746D36 /* main.m in Sources */,
 				48A656EB18163F8700746D36 /* ProductViewController.m in Sources */,
@@ -527,6 +555,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NavCtrl/NavCtrl-Prefix.pch";
 				INFOPLIST_FILE = "NavCtrl/NavCtrl-Info.plist";

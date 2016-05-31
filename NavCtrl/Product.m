@@ -12,12 +12,15 @@
 
 -(instancetype)initName:(NSString *)names andURL:(NSString *)url andImage:(NSString *)image;
 {
-    self.productName = names;
-    self.productURL = url;
-    self.productImage = image;
+    _productName = names;
+    _productURL = url;
+    _productImage = image;
     
     return self;
-    
+}
+
+-(void)dealloc{
+    [super dealloc];
 }
 
 @end

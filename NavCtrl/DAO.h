@@ -11,7 +11,8 @@
 #import "Company.h"
 
 @interface DAO : NSObject
-
-
+@property (nonatomic, retain) NSMutableArray *companyList;
+-(void)getCompanysAndProducts;
++ (id)sharedManager;
 
 @end

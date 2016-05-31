@@ -9,7 +9,7 @@
 #import "ProductViewController.h"
 #import "Webview.h"
 #import "DAO.h"
-
+#import "AddNewProduct.h"
 @interface ProductViewController ()
 
 @end
@@ -28,41 +28,47 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-     self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-      
+    self.clearsSelectionOnViewWillAppear = NO;
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]init];
+    addButton.action = @selector(openAddNewProduct);
+    addButton.title = @"Add Product";
+    addButton.target = self;
+    self.navigationItem.rightBarButtonItems= @[self.editButtonItem, addButton];
+    self.tableView.allowsSelectionDuringEditing = YES;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    
+-(void)openAddNewProduct
+{
+    AddNewProduct *vc =
+    [[AddNewProduct alloc]
+     initWithNibName:@"AddNewProduct" bundle:nil];
+    vc.company = self.company;    
+    [self.navigationController
+     pushViewController:vc
+     animated:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
-  
     [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.company.productsArray count];
 }
@@ -82,21 +88,36 @@
     return cell;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     Webview *detailViewController = [[Webview alloc] initWithNibName:@"Webview" bundle:nil];    
     detailViewController.myProductsURL = [[self.company.productsArray objectAtIndex:[indexPath row] ] productURL];
+    
+    
+    if (self.tableView.editing == YES) {
+        
+        AddNewProduct *editProduct =
+        [[AddNewProduct alloc]
+         initWithNibName:@"AddNewProduct" bundle:nil];
+        
+        editProduct.addProduct = [self.company.productsArray objectAtIndex:[indexPath row]];
+        
+        [self.navigationController
+         pushViewController:editProduct
+         animated:YES];
+        
+    } else {
                                                                                    
     [self.navigationController pushViewController:detailViewController animated:YES];
+        
+    }
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.company.productsArray removeObjectAtIndex:indexPath.row];
         [tableView reloadData];
-        
     }
 }
 
@@ -104,6 +125,7 @@
 {
     return YES;
 }
+
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
