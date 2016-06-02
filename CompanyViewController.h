@@ -14,5 +14,6 @@
 @interface CompanyViewController : UITableViewController
 @property (nonatomic, retain) IBOutlet  ProductViewController * productViewController;
 @property (nonatomic, retain) DAO *sharedManager;
+@property (nonatomic, retain) NSArray *stockPrices;
 
 @end

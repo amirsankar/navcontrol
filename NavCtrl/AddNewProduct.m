@@ -18,7 +18,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     if (self.addProduct != nil) {
         self.productNameTextField.text = self.addProduct.productName;
         self.productLogoTextField.text = self.addProduct.productImage;
@@ -30,7 +29,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

@@ -31,6 +31,7 @@
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
     self.sharedManager = [DAO sharedManager];
+    [self getStockPrice];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.title = @"Amir's Companies";
     
@@ -68,13 +69,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return [self.sharedManager.companyList count];
 }
 
@@ -86,8 +85,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    // Configure the cell...
-    cell.textLabel.text = [[self.sharedManager.companyList objectAtIndex:[indexPath row]] companyName];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", [[self.sharedManager.companyList objectAtIndex:[indexPath row]] companyName], [self.stockPrices objectAtIndex:[indexPath row]]];
     cell.imageView.image = [UIImage imageNamed:[[self.sharedManager.companyList objectAtIndex:[indexPath row]]companyImage]];
 
     return cell;
@@ -95,10 +93,8 @@
 
 #pragma mark - Table view delegate
 
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     if (self.tableView.editing == YES) {
         
                 AddNewCompany *editCompany =
@@ -109,7 +105,6 @@
         
         [self.navigationController pushViewController:editCompany
                  animated:YES];
-        
     } else {
         
         self.productViewController.title = [[self.sharedManager.companyList objectAtIndex:[indexPath row]]companyName];
@@ -118,9 +113,7 @@
         [self.navigationController
          pushViewController:self.productViewController
          animated:YES];
-
     }
-
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -142,7 +135,26 @@
     [self.sharedManager.companyList removeObjectAtIndex:(sourceIndexPath.row + 1)];
 }
 
-
-
+-(void)getStockPrice
+{
+    NSMutableString *stockString = [[NSMutableString alloc] initWithString:@""];
+    for (Company *company in self.sharedManager.companyList) {
+        [stockString appendString:[NSString stringWithFormat:@"%@+",company.stockSymbol ]];
+    }
+    stockString = (NSMutableString*)[stockString substringToIndex:[stockString length] - 1];
+    NSString *dataURL = [[NSString alloc]initWithFormat:@"http://finance.yahoo.com/d/quotes.csv?s=%@&f=b",stockString];
+    NSURL *url = [NSURL URLWithString:dataURL];
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSString *newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        self.stockPrices = [newStr componentsSeparatedByString:@"\n"];
+               dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.tableView reloadData];
+                });
+    }];
+    [dataTask resume];
+}
 
 @end

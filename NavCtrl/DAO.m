@@ -51,16 +51,16 @@ static DAO *sharedMyManager = nil;
     
     
     NSMutableArray *apple_products = [[NSMutableArray alloc]initWithArray:@[ipad, ipod, iphone]];
-    Company *apple = [[Company alloc]initName:@"Apple" andImage:@"Apple_Logo.png" andProducts:apple_products];
+    Company *apple = [[Company alloc]initName:@"Apple" andImage:@"Apple_Logo.png" andProducts:apple_products andStock:@"AAPL"];
 
     NSMutableArray *samsung_products = [[NSMutableArray alloc]initWithArray:@[s4, note, tab]];
-    Company *samsung = [[Company alloc]initName:@"Samsung" andImage:@"Samsung_logo.png" andProducts:samsung_products];
+    Company *samsung = [[Company alloc]initName:@"Samsung" andImage:@"Samsung_logo.png" andProducts:samsung_products andStock:@"SSNLF"];
 
     NSMutableArray *volkswagen_products = [[NSMutableArray alloc]initWithArray:@[jetta, passat, golf]];
-    Company *volkswagen = [[Company alloc]initName:@"Volkswagen" andImage:@"Volkswagen_logo.png" andProducts:volkswagen_products];
+    Company *volkswagen = [[Company alloc]initName:@"Volkswagen" andImage:@"Volkswagen_logo.png" andProducts:volkswagen_products andStock:@"GM"];
     
     NSMutableArray *rolex_products = [[NSMutableArray alloc]initWithArray:@[presidential, submariner, yachtmaster]];
-    Company *rolex = [[Company alloc]initName:@"Rolex" andImage:@"Rolex-logo.jpg" andProducts:rolex_products];
+    Company *rolex = [[Company alloc]initName:@"Rolex" andImage:@"Rolex-logo.jpg" andProducts:rolex_products andStock:@"UA"];
     [rolex_products release];
     [volkswagen_products release];
     [samsung_products release];

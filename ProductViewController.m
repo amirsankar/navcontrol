@@ -20,7 +20,6 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -63,13 +62,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return [self.company.productsArray count];
 }
 
@@ -80,7 +77,6 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    // Configure the cell...
     Product *currentProduct = [self.company.productsArray objectAtIndex:[indexPath row]];
     cell.textLabel.text = currentProduct.productName;
     cell.imageView.image = [UIImage imageNamed:currentProduct.productImage];
@@ -93,15 +89,12 @@
     Webview *detailViewController = [[Webview alloc] initWithNibName:@"Webview" bundle:nil];    
     detailViewController.myProductsURL = [[self.company.productsArray objectAtIndex:[indexPath row] ] productURL];
     
-    
     if (self.tableView.editing == YES) {
         
         AddNewProduct *editProduct =
         [[AddNewProduct alloc]
          initWithNibName:@"AddNewProduct" bundle:nil];
-        
         editProduct.addProduct = [self.company.productsArray objectAtIndex:[indexPath row]];
-        
         [self.navigationController
          pushViewController:editProduct
          animated:YES];

@@ -17,7 +17,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     NSString *urlString = self.myProductsURL;
     NSURL *myURL;
     if ([urlString.lowercaseString hasPrefix:@"http://"]) {
@@ -34,7 +33,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)dealloc

@@ -18,23 +18,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
     if (self.addcompany != nil) {
         self.companyNameTextField.text = self.addcompany.companyName;
         self.companyImageTextField.text = self.addcompany.companyImage;
     }
-
-    
-    // Do any additional setup after loading the view from its nib.
     self.sharedManager = [DAO sharedManager];
 }
 
 - (void)didReceiveMemoryWarning
 {
-
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -46,13 +39,13 @@
 }
 
 
-- (IBAction)submitButton:(id)sender {
-    
+- (IBAction)submitButton:(id)sender
+{
     if(self.addcompany == nil){
     
     NSMutableArray *productsArray = [[NSMutableArray alloc]init];
     
-    Company *addcompany = [[Company alloc]initName:self.companyNameTextField.text andImage:self.companyImageTextField.text andProducts:productsArray];
+    Company *addcompany = [[Company alloc]initName:self.companyNameTextField.text andImage:self.companyImageTextField.text andProducts:productsArray andStock:@"will add textfield"];
     
     [self.sharedManager.companyList addObject:addcompany];
     
