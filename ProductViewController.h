@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Company.h"
+#import "DAO.h"
 
 @interface ProductViewController : UITableViewController
 @property (nonatomic, retain) Company *company;
+@property (nonatomic, retain) DAO *sharedManager;
 
 @end

@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		390B8A991CEB770B00B06BA7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390B8A981CEB770B00B06BA7 /* WebKit.framework */; };
-		390B8A9C1CEBBBE100B06BA7 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 390B8A9B1CEBBBE100B06BA7 /* Company.m */; };
-		390B8A9F1CEBBBF500B06BA7 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 390B8A9E1CEBBBF500B06BA7 /* Product.m */; };
 		3926C9351CF4DB3B00AD6219 /* flatiron.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3926C9341CF4DB3B00AD6219 /* flatiron.jpg */; };
-		392789091CECEA3700110A2E /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 392789081CECEA3700110A2E /* DAO.m */; };
 		39659DB51CEA3C25003029A2 /* Apple_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 39659DB41CEA3C25003029A2 /* Apple_Logo.png */; };
 		39659DB71CEA3D62003029A2 /* Samsung_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 39659DB61CEA3D62003029A2 /* Samsung_logo.png */; };
 		39659DB91CEA3DFF003029A2 /* Volkswagen_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 39659DB81CEA3DFF003029A2 /* Volkswagen_logo.png */; };
@@ -28,28 +25,33 @@
 		39659DCF1CEA5476003029A2 /* presidential.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39659DCE1CEA5476003029A2 /* presidential.jpg */; };
 		39659DD11CEA5486003029A2 /* yacht_master.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39659DD01CEA5486003029A2 /* yacht_master.jpg */; };
 		39659DD31CEA5496003029A2 /* submariner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39659DD21CEA5496003029A2 /* submariner.jpg */; };
-		39659DD71CEA59A3003029A2 /* Webview.m in Sources */ = {isa = PBXBuildFile; fileRef = 39659DD51CEA59A3003029A2 /* Webview.m */; };
 		39659DD81CEA59A3003029A2 /* Webview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39659DD61CEA59A3003029A2 /* Webview.xib */; };
-		3996BEDC1CEE4D14007ACDA9 /* AddNewCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = 3996BEDA1CEE4D14007ACDA9 /* AddNewCompany.m */; };
+		396B497E1D071F5D00746F30 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 396B497D1D071F5D00746F30 /* libsqlite3.tbd */; };
+		396B49801D072F8700746F30 /* CompanyProductDatabase.db in Resources */ = {isa = PBXBuildFile; fileRef = 396B497F1D072F8700746F30 /* CompanyProductDatabase.db */; };
+		396B49811D072F8700746F30 /* CompanyProductDatabase.db in Resources */ = {isa = PBXBuildFile; fileRef = 396B497F1D072F8700746F30 /* CompanyProductDatabase.db */; };
 		3996BEDD1CEE4D14007ACDA9 /* AddNewCompany.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3996BEDB1CEE4D14007ACDA9 /* AddNewCompany.xib */; };
 		39ABA31B1CF38890002E7FA0 /* tttt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39ABA31A1CF38890002E7FA0 /* tttt.jpg */; };
-		39ABA31F1CF38F36002E7FA0 /* AddNewProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABA31D1CF38F36002E7FA0 /* AddNewProduct.m */; };
 		39ABA3201CF38F36002E7FA0 /* AddNewProduct.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39ABA31E1CF38F36002E7FA0 /* AddNewProduct.xib */; };
+		39BEC1E61D106894006BD6FA /* NavControllerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A656C418163BF200746D36 /* NavControllerAppDelegate.m */; };
+		39BEC1E71D106894006BD6FA /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A656E418163C1B00746D36 /* CompanyViewController.m */; };
+		39BEC1E81D106894006BD6FA /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 390B8A9B1CEBBBE100B06BA7 /* Company.m */; };
+		39BEC1E91D106894006BD6FA /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A656E918163F8700746D36 /* ProductViewController.m */; };
+		39BEC1EB1D1068A8006BD6FA /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 390B8A9E1CEBBBF500B06BA7 /* Product.m */; };
+		39BEC1ED1D1068A8006BD6FA /* Webview.m in Sources */ = {isa = PBXBuildFile; fileRef = 39659DD51CEA59A3003029A2 /* Webview.m */; };
+		39BEC1EE1D1068A8006BD6FA /* AddNewCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = 3996BEDA1CEE4D14007ACDA9 /* AddNewCompany.m */; };
+		39BEC1EF1D1068A8006BD6FA /* AddNewProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABA31D1CF38F36002E7FA0 /* AddNewProduct.m */; };
+		39BEC1F01D1068B0006BD6FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A656C018163BF200746D36 /* main.m */; };
 		48A656B518163BF200746D36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A656B418163BF200746D36 /* Foundation.framework */; };
 		48A656B718163BF200746D36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A656B618163BF200746D36 /* CoreGraphics.framework */; };
 		48A656B918163BF200746D36 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A656B818163BF200746D36 /* UIKit.framework */; };
 		48A656BF18163BF200746D36 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48A656BD18163BF200746D36 /* InfoPlist.strings */; };
-		48A656C118163BF200746D36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A656C018163BF200746D36 /* main.m */; };
-		48A656C518163BF200746D36 /* NavControllerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A656C418163BF200746D36 /* NavControllerAppDelegate.m */; };
 		48A656C718163BF200746D36 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A656C618163BF200746D36 /* Images.xcassets */; };
 		48A656CE18163BF200746D36 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A656CD18163BF200746D36 /* XCTest.framework */; };
 		48A656CF18163BF200746D36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A656B418163BF200746D36 /* Foundation.framework */; };
 		48A656D018163BF200746D36 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A656B818163BF200746D36 /* UIKit.framework */; };
 		48A656D818163BF200746D36 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48A656D618163BF200746D36 /* InfoPlist.strings */; };
 		48A656DA18163BF200746D36 /* NavCtrlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A656D918163BF200746D36 /* NavCtrlTests.m */; };
-		48A656E618163C1B00746D36 /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A656E418163C1B00746D36 /* CompanyViewController.m */; };
 		48A656E718163C1B00746D36 /* CompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48A656E518163C1B00746D36 /* CompanyViewController.xib */; };
-		48A656EB18163F8700746D36 /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A656E918163F8700746D36 /* ProductViewController.m */; };
 		48A656EE1816468000746D36 /* Sunflower.gif in Resources */ = {isa = PBXBuildFile; fileRef = 48A656ED1816468000746D36 /* Sunflower.gif */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +93,8 @@
 		39659DD41CEA59A3003029A2 /* Webview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Webview.h; sourceTree = "<group>"; };
 		39659DD51CEA59A3003029A2 /* Webview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Webview.m; sourceTree = "<group>"; };
 		39659DD61CEA59A3003029A2 /* Webview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Webview.xib; sourceTree = "<group>"; };
+		396B497D1D071F5D00746F30 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		396B497F1D072F8700746F30 /* CompanyProductDatabase.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = CompanyProductDatabase.db; sourceTree = "<group>"; };
 		3996BED91CEE4D14007ACDA9 /* AddNewCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewCompany.h; sourceTree = "<group>"; };
 		3996BEDA1CEE4D14007ACDA9 /* AddNewCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewCompany.m; sourceTree = "<group>"; };
 		3996BEDB1CEE4D14007ACDA9 /* AddNewCompany.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewCompany.xib; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396B497E1D071F5D00746F30 /* libsqlite3.tbd in Frameworks */,
 				390B8A991CEB770B00B06BA7 /* WebKit.framework in Frameworks */,
 				48A656B718163BF200746D36 /* CoreGraphics.framework in Frameworks */,
 				48A656B918163BF200746D36 /* UIKit.framework in Frameworks */,
@@ -212,6 +217,7 @@
 		48A656B318163BF200746D36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				396B497D1D071F5D00746F30 /* libsqlite3.tbd */,
 				390B8A981CEB770B00B06BA7 /* WebKit.framework */,
 				48A656B418163BF200746D36 /* Foundation.framework */,
 				48A656B618163BF200746D36 /* CoreGraphics.framework */,
@@ -259,6 +265,7 @@
 				48A656BD18163BF200746D36 /* InfoPlist.strings */,
 				48A656C018163BF200746D36 /* main.m */,
 				48A656C218163BF200746D36 /* NavCtrl-Prefix.pch */,
+				396B497F1D072F8700746F30 /* CompanyProductDatabase.db */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -368,6 +375,7 @@
 				48A656E718163C1B00746D36 /* CompanyViewController.xib in Resources */,
 				39659DD31CEA5496003029A2 /* submariner.jpg in Resources */,
 				39659DCF1CEA5476003029A2 /* presidential.jpg in Resources */,
+				396B49801D072F8700746F30 /* CompanyProductDatabase.db in Resources */,
 				39659DD81CEA59A3003029A2 /* Webview.xib in Resources */,
 				39659DCB1CEA4F15003029A2 /* Passat.jpg in Resources */,
 				3926C9351CF4DB3B00AD6219 /* flatiron.jpg in Resources */,
@@ -392,6 +400,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396B49811D072F8700746F30 /* CompanyProductDatabase.db in Resources */,
 				48A656D818163BF200746D36 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,16 +412,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				390B8A9F1CEBBBF500B06BA7 /* Product.m in Sources */,
-				48A656E618163C1B00746D36 /* CompanyViewController.m in Sources */,
-				39ABA31F1CF38F36002E7FA0 /* AddNewProduct.m in Sources */,
-				390B8A9C1CEBBBE100B06BA7 /* Company.m in Sources */,
-				48A656C518163BF200746D36 /* NavControllerAppDelegate.m in Sources */,
-				392789091CECEA3700110A2E /* DAO.m in Sources */,
-				3996BEDC1CEE4D14007ACDA9 /* AddNewCompany.m in Sources */,
-				39659DD71CEA59A3003029A2 /* Webview.m in Sources */,
-				48A656C118163BF200746D36 /* main.m in Sources */,
-				48A656EB18163F8700746D36 /* ProductViewController.m in Sources */,
+				39BEC1F01D1068B0006BD6FA /* main.m in Sources */,
+				39BEC1EB1D1068A8006BD6FA /* Product.m in Sources */,
+				39BEC1ED1D1068A8006BD6FA /* Webview.m in Sources */,
+				39BEC1EE1D1068A8006BD6FA /* AddNewCompany.m in Sources */,
+				39BEC1EF1D1068A8006BD6FA /* AddNewProduct.m in Sources */,
+				39BEC1E61D106894006BD6FA /* NavControllerAppDelegate.m in Sources */,
+				39BEC1E71D106894006BD6FA /* CompanyViewController.m in Sources */,
+				39BEC1E81D106894006BD6FA /* Company.m in Sources */,
+				39BEC1E91D106894006BD6FA /* ProductViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

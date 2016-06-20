@@ -12,6 +12,7 @@
 #import "AddNewCompany.h"
 @interface CompanyViewController ()
 
+
 @end
 
 @implementation CompanyViewController
@@ -52,8 +53,7 @@
 -(void)openAddNewCompany
 {
     UIViewController *vc =
-    [[AddNewCompany alloc]
-     initWithNibName:@"AddNewCompany" bundle:nil];
+    [[AddNewCompany alloc] initWithNibName:@"AddNewCompany" bundle:nil];
     
     [self.navigationController
      pushViewController:vc
@@ -84,8 +84,13 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    NSString *companyName = [[self.sharedManager.companyList objectAtIndex:indexPath.row] companyName];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", [[self.sharedManager.companyList objectAtIndex:[indexPath row]] companyName], [self.stockPrices objectAtIndex:[indexPath row]]];
+    if ([self.stockPrices objectAtIndex:[indexPath row]] != nil) {
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", companyName, [self.stockPrices objectAtIndex:[indexPath row]]];
+    } else {
+        cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.sharedManager.companyList objectAtIndex:[indexPath row]] companyName]];
+    }
     cell.imageView.image = [UIImage imageNamed:[[self.sharedManager.companyList objectAtIndex:[indexPath row]]companyImage]];
 
     return cell;
@@ -96,18 +101,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.tableView.editing == YES) {
-        
                 AddNewCompany *editCompany =
                 [[AddNewCompany alloc]
                  initWithNibName:@"AddNewCompany" bundle:nil];
         
-        editCompany.addcompany = [self.sharedManager.companyList objectAtIndex:indexPath.row];
+        editCompany.companyToEdit = [self.sharedManager.companyList objectAtIndex:indexPath.row];
         
         [self.navigationController pushViewController:editCompany
                  animated:YES];
     } else {
         
-        self.productViewController.title = [[self.sharedManager.companyList objectAtIndex:[indexPath row]]companyName];
+        self.productViewController.title = [[self.sharedManager.companyList objectAtIndex:[indexPath row]] companyName];
         self.productViewController.company = [self.sharedManager.companyList objectAtIndex:[indexPath row]];
         
         [self.navigationController
@@ -119,6 +123,10 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        Company *company = [self.sharedManager.companyList objectAtIndex:indexPath.row];
+        [self.sharedManager deleteCompanyFromSQL:company.companyID];
+        
         [self.sharedManager.companyList removeObjectAtIndex:indexPath.row];
         [tableView reloadData];
     }
@@ -156,5 +164,6 @@
     }];
     [dataTask resume];
 }
+
 
 @end

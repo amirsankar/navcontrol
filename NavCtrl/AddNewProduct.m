@@ -18,10 +18,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (self.addProduct != nil) {
-        self.productNameTextField.text = self.addProduct.productName;
-        self.productLogoTextField.text = self.addProduct.productImage;
-        self.productUrlTextField.text = self.addProduct.productURL;
+    if (self.productToEdit != nil) {
+        self.productNameTextField.text = self.productToEdit.productName;
+        self.productLogoTextField.text = self.productToEdit.productImage;
+        self.productUrlTextField.text = self.productToEdit.productURL;
     }
 
 }
@@ -41,15 +41,13 @@
 }
 - (IBAction)submit:(id)sender
 {
-    if(self.addProduct == nil){
-        
-        Product *addProduct = [[Product alloc]initName:self.productNameTextField.text andURL:self.productUrlTextField.text andImage:self.productLogoTextField.text];
-        [self.company.productsArray addObject:addProduct];
-        
+    if(self.productToEdit == nil){
+           [[DAO sharedManager] addProduct:self.productNameTextField.text andURL:self.productUrlTextField.text andImage:self.productLogoTextField.text forCompany:self.company];
     } else {
-        self.addProduct.productName = self.productNameTextField.text;
-        self.addProduct.productImage = self.productLogoTextField.text;
-        self.addProduct.productURL = self.productUrlTextField.text;
+        self.productToEdit.productName = self.productNameTextField.text;
+        self.productToEdit.productImage = self.productLogoTextField.text;
+        self.productToEdit.productURL = self.productUrlTextField.text;
+        [[DAO sharedManager] editProduct:self.productToEdit];
     }
     
     [self.navigationController popViewControllerAnimated:YES];

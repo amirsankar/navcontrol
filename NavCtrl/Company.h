@@ -14,7 +14,8 @@
 @property (nonatomic, retain) NSString *companyName;
 @property(nonatomic, retain) NSString *companyImage;
 @property(nonatomic, retain) NSString *stockSymbol;
--(instancetype)initName:(NSString *)names andImage:(NSString *)image andProducts:(NSMutableArray *)products andStock:(NSString *)symbol;
-
+@property(nonatomic, retain) NSNumber *companyID;
+-(instancetype)initName:(NSString *)names andImage:(NSString *)image andStock:(NSString *)symbol;
+-(instancetype)initName:(NSString *)names andImage:(NSString *)image andStock:(NSString *)symbol andID:(NSNumber *)number;
 
 @end

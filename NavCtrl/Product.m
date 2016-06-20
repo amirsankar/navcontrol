@@ -12,12 +12,23 @@
 
 -(instancetype)initName:(NSString *)names andURL:(NSString *)url andImage:(NSString *)image;
 {
-    _productName = names;
-    _productURL = url;
-    _productImage = image;
+    _productName = [names retain];
+    _productURL = [url retain];
+    _productImage = [image retain];
     
     return self;
 }
+
+-(instancetype)initName:(NSString *)names andURL:(NSString *)url andImage:(NSString *)image andId:(NSNumber *)number
+{
+    _productName = [names retain];
+    _productURL = [url retain];
+    _productImage = [image retain];
+    _productID = [number retain];
+    
+    return self;
+}
+
 
 -(void)dealloc{
     [super dealloc];

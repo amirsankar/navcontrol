@@ -10,13 +10,24 @@
 
 @implementation Company
 
--(instancetype)initName:(NSString *)name andImage:(NSString *)image andProducts:(NSMutableArray *)products andStock:(NSString *)symbol
+-(instancetype)initName:(NSString *)name andImage:(NSString *)image andStock:(NSString *)symbol
 {
-    _companyName = name;
-    _companyImage = image;
-    _stockSymbol = symbol;
-    _productsArray = [products retain];
+    _companyName = [name retain];
+    _companyImage = [image retain];
+    _stockSymbol = [symbol retain];
+    _productsArray = [[NSMutableArray alloc]init];
     return self;
 }
+
+-(instancetype)initName:(NSString *)name andImage:(NSString *)image andStock:(NSString *)symbol andID:(NSNumber *)number
+{
+    _companyName = [name retain];
+    _companyImage = [image retain];
+    _stockSymbol = [symbol retain];
+    _companyID = [number retain];
+    _productsArray = [[NSMutableArray alloc]init];
+    return self;
+}
+
 
 @end

@@ -12,9 +12,10 @@
 
 @interface AddNewCompany : UIViewController
 @property (retain, nonatomic) DAO *sharedManager;
-@property (retain, nonatomic) Company *addcompany;
+@property (retain, nonatomic) Company *companyToEdit;
 @property (retain, nonatomic) IBOutlet UITextField *companyImageTextField;
 @property (retain, nonatomic) IBOutlet UITextField *companyNameTextField;
 - (IBAction)submitButton:(id)sender;
+@property (retain, nonatomic) IBOutlet UITextField *companyStockTextField;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "AddNewCompany.h"
 #import "DAO.h"
+#import "DAO.m"
 
 @interface AddNewCompany ()
 
@@ -18,9 +19,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (self.addcompany != nil) {
-        self.companyNameTextField.text = self.addcompany.companyName;
-        self.companyImageTextField.text = self.addcompany.companyImage;
+    if (self.companyToEdit != nil) {
+        self.companyNameTextField.text = self.companyToEdit.companyName;
+        self.companyImageTextField.text = self.companyToEdit.companyImage;
+        self.companyStockTextField.text =  self.companyToEdit.stockSymbol;
     }
     self.sharedManager = [DAO sharedManager];
 }
@@ -35,23 +37,20 @@
 {
     [_companyNameTextField release];
     [_companyImageTextField release];
+    [_companyStockTextField release];
     [super dealloc];
 }
 
 
 - (IBAction)submitButton:(id)sender
 {
-    if(self.addcompany == nil){
-    
-    NSMutableArray *productsArray = [[NSMutableArray alloc]init];
-    
-    Company *addcompany = [[Company alloc]initName:self.companyNameTextField.text andImage:self.companyImageTextField.text andProducts:productsArray andStock:@"will add textfield"];
-    
-    [self.sharedManager.companyList addObject:addcompany];
-    
+    if (self.companyToEdit == nil) {
+        [[DAO sharedManager] addCompany:self.companyNameTextField.text withImage:self.companyImageTextField.text withStock:self.companyStockTextField.text];
     } else {
-        self.addcompany.companyName = self.companyNameTextField.text;
-        self.addcompany.companyImage = self.companyImageTextField.text;
+      self.companyToEdit.companyName = self.companyNameTextField.text ;
+      self.companyToEdit.companyImage = self.companyImageTextField.text;
+      self.companyToEdit.stockSymbol = self.companyStockTextField.text;
+        [[DAO sharedManager] editCompany:self.companyToEdit];
     }
     
     [self.navigationController popToRootViewControllerAnimated:YES];

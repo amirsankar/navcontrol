@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
+    self.sharedManager = [DAO sharedManager];
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]init];
     addButton.action = @selector(openAddNewProduct);
     addButton.title = @"Add Product";
@@ -90,11 +91,10 @@
     detailViewController.myProductsURL = [[self.company.productsArray objectAtIndex:[indexPath row] ] productURL];
     
     if (self.tableView.editing == YES) {
-        
         AddNewProduct *editProduct =
         [[AddNewProduct alloc]
          initWithNibName:@"AddNewProduct" bundle:nil];
-        editProduct.addProduct = [self.company.productsArray objectAtIndex:[indexPath row]];
+        editProduct.productToEdit = [self.company.productsArray objectAtIndex:[indexPath row]];
         [self.navigationController
          pushViewController:editProduct
          animated:YES];
@@ -109,6 +109,9 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Product *product = [self.company.productsArray objectAtIndex:indexPath.row];
+        [self.sharedManager deleteProductFromSQL:product.productID];
+        
         [self.company.productsArray removeObjectAtIndex:indexPath.row];
         [tableView reloadData];
     }
