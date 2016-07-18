@@ -9,11 +9,11 @@
 #import "NavControllerAppDelegate.h"
 #import "CompanyViewController.h"
 
+
 @implementation NavControllerAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
     // Override point for customization after application launch.
     UIViewController *rootController =
     [[CompanyViewController alloc]
@@ -21,22 +21,15 @@
     
     self.navigationController = [[UINavigationController alloc]
                             initWithRootViewController:rootController];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:(.498) green:(.706) blue:(.2235) alpha:1]];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
-//  self.window addSubview:self.navigationController.view];
     [self.window setRootViewController:self.navigationController];
     [self.window makeKeyAndVisible];
     return YES;
-    
-    
-    /*
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
-     */
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -64,6 +57,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+ //   [self.sharedManager saveContext];
 }
 
 @end

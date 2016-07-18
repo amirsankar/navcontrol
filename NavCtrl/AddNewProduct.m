@@ -8,6 +8,7 @@
 
 #import "AddNewProduct.h"
 #import "Webview.h"
+#import "DAO.h"
 
 @interface AddNewProduct ()
 
@@ -31,7 +32,6 @@
     [super didReceiveMemoryWarning];
 }
 
-
 - (void)dealloc
 {
     [_productNameTextField release];
@@ -42,15 +42,19 @@
 - (IBAction)submit:(id)sender
 {
     if(self.productToEdit == nil){
-           [[DAO sharedManager] addProduct:self.productNameTextField.text andURL:self.productUrlTextField.text andImage:self.productLogoTextField.text forCompany:self.company];
+        [[DAO sharedManager] addProduct:self.productNameTextField.text andURL:self.productUrlTextField.text andImage:self.productLogoTextField.text forCompany:self.company];
     } else {
-        self.productToEdit.productName = self.productNameTextField.text;
-        self.productToEdit.productImage = self.productLogoTextField.text;
-        self.productToEdit.productURL = self.productUrlTextField.text;
-        [[DAO sharedManager] editProduct:self.productToEdit];
+
+       [[DAO sharedManager] editProduct:self.productToEdit inCompany:self.company newName:self.productNameTextField.text newImage:self.productLogoTextField.text newURL:self.productUrlTextField.text];
     }
     
     [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+- (IBAction)deleteButton:(id)sender {
+    [[DAO sharedManager]deleteProduct:self.productToEdit inCompany:self.company];
+    [self.navigationController popToViewController:self.navigationController.viewControllers[1]animated: YES];
     
 }
 

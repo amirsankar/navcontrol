@@ -19,19 +19,14 @@
     return self;
 }
 
--(instancetype)initName:(NSString *)names andURL:(NSString *)url andImage:(NSString *)image andId:(NSNumber *)number
-{
-    _productName = [names retain];
-    _productURL = [url retain];
-    _productImage = [image retain];
-    _productID = [number retain];
-    
-    return self;
-}
-
-
 -(void)dealloc{
+    _productName = nil;
+    _productURL = nil;
+    _productName = nil;
+    _productID = nil;
     [super dealloc];
 }
+
+
 
 @end

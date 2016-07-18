@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "DAO.h"
-
-
-@class ProductViewController;
+#import "ProductListViewController.h"
 
 @interface CompanyViewController : UITableViewController
-@property (nonatomic, retain) IBOutlet  ProductViewController * productViewController;
+@property (nonatomic, retain) ProductListViewController * productListViewController;
 @property (nonatomic, retain) DAO *sharedManager;
 @property (nonatomic, retain) NSArray *stockPrices;
 

@@ -16,5 +16,7 @@
 @property (retain, nonatomic) Product *productToEdit;
 @property (retain, nonatomic) Company *company;
 - (IBAction)submit:(id)sender;
+- (IBAction)deleteButton:(id)sender;
+
 
 @end

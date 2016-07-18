@@ -32,7 +32,6 @@
     [super didReceiveMemoryWarning];
 }
 
-
 - (void)dealloc
 {
     [_companyNameTextField release];
@@ -41,18 +40,15 @@
     [super dealloc];
 }
 
-
 - (IBAction)submitButton:(id)sender
 {
     if (self.companyToEdit == nil) {
         [[DAO sharedManager] addCompany:self.companyNameTextField.text withImage:self.companyImageTextField.text withStock:self.companyStockTextField.text];
     } else {
-      self.companyToEdit.companyName = self.companyNameTextField.text ;
-      self.companyToEdit.companyImage = self.companyImageTextField.text;
-      self.companyToEdit.stockSymbol = self.companyStockTextField.text;
-        [[DAO sharedManager] editCompany:self.companyToEdit];
+        [[DAO sharedManager] editCompany:self.companyToEdit newName:self.companyNameTextField.text withImage:self.companyImageTextField.text withStock:self.companyStockTextField.text];
+        
+        self.companyToEdit = nil;
     }
-    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 @end

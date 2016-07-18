@@ -7,9 +7,10 @@
 //
 
 #import "CompanyViewController.h"
-#import "ProductViewController.h"
 #import "DAO.h"
 #import "AddNewCompany.h"
+#import "Company.h"
+
 @interface CompanyViewController ()
 
 
@@ -30,23 +31,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.clearsSelectionOnViewWillAppear = NO;
     self.sharedManager = [DAO sharedManager];
     [self getStockPrice];
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.title = @"Amir's Companies";
-    
     self.tableView.allowsSelectionDuringEditing = YES;
-    
+    self.view.frame = self.view.window.frame;
+    self.tableView.frame = self.view.frame;
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]init];
     addButton.action = @selector(openAddNewCompany);
-    addButton.title = @"Add Company";
+    addButton.title = @"Add";
     addButton.target = self;
-    self.navigationItem.leftBarButtonItem = addButton;
+    UIBarButtonItem *undoButton = [[UIBarButtonItem alloc]init];
+    undoButton.action = @selector(undoButtonAction);
+    undoButton.title = @"Undo";
+    undoButton.target = self;
+    [self.navigationItem setLeftBarButtonItems:@[addButton]];
+
+    [self.navigationItem setRightBarButtonItems: @[self.editButtonItem, undoButton]];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [self.tableView reloadData];
+
+}
+
+-(void)undoButtonAction
+{
+    DAO *sharedManager = [DAO sharedManager];
+    [sharedManager.managedObjectContext undo];
+    [sharedManager loadData];
     [self.tableView reloadData];
 }
 
@@ -54,7 +69,6 @@
 {
     UIViewController *vc =
     [[AddNewCompany alloc] initWithNibName:@"AddNewCompany" bundle:nil];
-    
     [self.navigationController
      pushViewController:vc
      animated:YES];
@@ -82,12 +96,16 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     NSString *companyName = [[self.sharedManager.companyList objectAtIndex:indexPath.row] companyName];
     
+    NSString *stockSymbol = [[self.sharedManager.companyList objectAtIndex:indexPath.row]stockSymbol];
+    
     if ([self.stockPrices objectAtIndex:[indexPath row]] != nil) {
-        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", companyName, [self.stockPrices objectAtIndex:[indexPath row]]];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ (%@)", companyName,stockSymbol];
+        cell.detailTextLabel.numberOfLines = 2;
+        cell.detailTextLabel.text = [self.stockPrices objectAtIndex:[indexPath row]];
     } else {
         cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.sharedManager.companyList objectAtIndex:[indexPath row]] companyName]];
     }
@@ -111,11 +129,12 @@
                  animated:YES];
     } else {
         
-        self.productViewController.title = [[self.sharedManager.companyList objectAtIndex:[indexPath row]] companyName];
-        self.productViewController.company = [self.sharedManager.companyList objectAtIndex:[indexPath row]];
+        self.productListViewController = [[ProductListViewController alloc]init];
+        self.productListViewController.title = [[self.sharedManager.companyList objectAtIndex:[indexPath row]] companyName];
+        self.productListViewController.company = [self.sharedManager.companyList objectAtIndex:[indexPath row]];
         
         [self.navigationController
-         pushViewController:self.productViewController
+         pushViewController:self.productListViewController
          animated:YES];
     }
 }
@@ -125,9 +144,9 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
         Company *company = [self.sharedManager.companyList objectAtIndex:indexPath.row];
-        [self.sharedManager deleteCompanyFromSQL:company.companyID];
+        [self.sharedManager deleteCompany:company];
         
-        [self.sharedManager.companyList removeObjectAtIndex:indexPath.row];
+        [company release];
         [tableView reloadData];
     }
 }
@@ -145,12 +164,15 @@
 
 -(void)getStockPrice
 {
-    NSMutableString *stockString = [[NSMutableString alloc] initWithString:@""];
+    NSMutableArray *stockSymbols = [[NSMutableArray alloc] init];
     for (Company *company in self.sharedManager.companyList) {
-        [stockString appendString:[NSString stringWithFormat:@"%@+",company.stockSymbol ]];
+        [stockSymbols addObject:company.stockSymbol];
     }
-    stockString = (NSMutableString*)[stockString substringToIndex:[stockString length] - 1];
-    NSString *dataURL = [[NSString alloc]initWithFormat:@"http://finance.yahoo.com/d/quotes.csv?s=%@&f=b",stockString];
+    
+    NSString *dataURL = [NSString stringWithFormat:@"http://finance.yahoo.com/d/quotes.csv?s=%@&f=b",[stockSymbols componentsJoinedByString:@"+"]];
+    
+    [stockSymbols release];
+    
     NSURL *url = [NSURL URLWithString:dataURL];
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
@@ -161,6 +183,8 @@
                dispatch_async(dispatch_get_main_queue(), ^{
                     [self.tableView reloadData];
                 });
+        [newStr release];
+        [session finishTasksAndInvalidate];
     }];
     [dataTask resume];
 }

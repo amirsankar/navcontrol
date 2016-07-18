@@ -19,15 +19,20 @@
     return self;
 }
 
--(instancetype)initName:(NSString *)name andImage:(NSString *)image andStock:(NSString *)symbol andID:(NSNumber *)number
-{
-    _companyName = [name retain];
-    _companyImage = [image retain];
-    _stockSymbol = [symbol retain];
-    _companyID = [number retain];
-    _productsArray = [[NSMutableArray alloc]init];
-    return self;
-}
 
+-(void)dealloc{
+    [_productsArray removeAllObjects];
+    [_companyName release];
+    [_companyImage release];
+    [_stockSymbol release];
+    [_productsArray release];
+    
+    _companyName = nil;
+    _companyImage = nil;
+    _stockSymbol = nil;
+    _productsArray = nil;
+    
+    [super dealloc];
+}
 
 @end

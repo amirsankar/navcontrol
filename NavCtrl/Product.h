@@ -14,6 +14,5 @@
 @property(nonatomic, retain) NSString *productImage;
 @property(nonatomic, retain) NSNumber *productID;
 -(instancetype)initName:(NSString *)names andURL:(NSString *)url andImage:(NSString *)image;
--(instancetype)initName:(NSString *)names andURL:(NSString *)url andImage:(NSString *)image andId:(NSNumber *)number;
 
 @end
